@@ -1,0 +1,5 @@
+- Klassen mit Textdatei/Editor statt im Code definieren
+- Rahmen um Charakterbilder
+- Animierte Karten?
+- Texte auf den Karten rendern statt im Bild (Wird im Multiplayer schon gemacht, im Singleplayer noch nicht)
+- custom SSJ effekt für jede Klasse

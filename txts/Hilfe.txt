@@ -1,0 +1,8 @@
+Wilkommen zu Cards of Chaos Kings (CoCK). Um zu Spielen müssen Sie über Matchmaking entweder einen Server starten oder einem be-
+stehenden Server beitreten. Dies wird im Chat angekündigt. Im Spiel geht es darum, dass 2 Figuren gegeneinander Kämpfen. Zu Beginn
+können Sie eine Klasse wählen. Bei klick auf x wird zufällig gewählt. Danach geht es abwechselnd daraum, die HP des Gegners zuerst
+auf 0 zu bekommen. Dazu stehen Ihnen je nach Klasse verschiedene Angriffs-(rot), Booster-(Grau), Heilungs-(Grün), Reducer-(Schwarz)
+und Spezialkarten(gold) zur Verfügung. Außerdem können Sie mit einer blauen Karte, 5 neue Handkarten ziehen. Im Spiel können Sie natür-
+lich trotzdem chatten! Sowohl im privaten Chat mit Ihrem Gegner als auch im öffentlichen Chat. Bei Klick auf "Beleidigung" im Pri-
+vatchat wird Ihrem Gegner eine böse Beleidigung gesendet.
+Tastenkürzel: Alt-G: Gegnerkarten, Alt-C: Chat, Alt-M: Matchmaking
