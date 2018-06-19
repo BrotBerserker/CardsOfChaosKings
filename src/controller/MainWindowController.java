@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeEvent;
@@ -567,6 +569,16 @@ public class MainWindowController {
 					karteInDieMitte(x);
 				}
 			});
+			
+			view.getPlayerCardsPanel().getCardButtons()[i].addMouseListener(new MouseAdapter() {
+				@Override
+	            public void mouseReleased(MouseEvent event){
+	                if(event.getClickCount() == 2 && event.getButton() == MouseEvent.BUTTON1){
+	                	karteInDieMitte(x);
+	                	spieleKarte();
+	                }
+	            }
+			}); /**/
 		}
 	}
 
