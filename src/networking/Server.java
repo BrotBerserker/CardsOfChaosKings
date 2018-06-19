@@ -88,8 +88,8 @@ public class Server {
 			players[1].out.writeObject("Deck auswaehlen!");
 			String spielerStr = players[1].in.readLine();
 			String spielerName = players[1].in.readLine();
-			int spielerIndex = Integer.parseInt(spielerStr);
-			model1 = readSpieler(spielerIndex);
+			//int spielerIndex = Integer.parseInt(spielerStr);
+			model1 = readSpieler(spielerStr);
 			model1.setSpielerName(spielerName);
 		} else {
 			ki = new GreedyKi();
@@ -97,8 +97,8 @@ public class Server {
 			String spielerStr = players[0].in.readLine();
 			players[0].in.readLine();// muss gemacht werden, weil normalerweise
 										// der Spielername mitübergeben wird
-			int spielerIndex = Integer.parseInt(spielerStr);
-			model1 = readSpieler(spielerIndex);
+			//int spielerIndex = Integer.parseInt(spielerStr);
+			model1 = readSpieler(spielerStr);
 			model1.setSpielerName("Rüdiger (Bot)");
 		}
 		model1.setGegner(model0);
@@ -112,8 +112,8 @@ public class Server {
 		players[0].out.writeObject("Deck auswaehlen!");
 		String spielerStr = players[0].in.readLine();
 		String spielerName = players[0].in.readLine();
-		int spielerIndex = Integer.parseInt(spielerStr);
-		model0 = readSpieler(spielerIndex);
+		//int spielerIndex = String.parseInt(spielerStr);
+		model0 = readSpieler(spielerStr);
 		model0.setSpielerName(spielerName);
 		System.out.println("vorher21");
 	}
@@ -245,8 +245,8 @@ public class Server {
 		System.out.println("-Server closed-");
 	}
 
-	private Spieler readSpieler(final int index) {
-		return SpielerListe.getSpieler(index);
+	private Spieler readSpieler(final String key) {
+		return SpielerListe.getSpieler(key);
 	}
 }
 

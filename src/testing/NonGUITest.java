@@ -14,7 +14,7 @@ public class NonGUITest {
 	}
 
 	private static void test() {
-		final Spieler spieler = SpielerListe.getSpieler(0);
+		final Spieler spieler = SpielerListe.getSpieler((String) SpielerListe.KLASSEN.keySet().toArray()[0]);
 		spieler.addPropertyChangeListener(new PropertyChangeListener() {
 			@Override
 			public void propertyChange(final PropertyChangeEvent evt) {

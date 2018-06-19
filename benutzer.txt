@@ -1,5 +1,5 @@
-Horst;banane;1490;390;205;120
+Horst;banane;1490;393;205;123
 Jana;janaop;0;3;0;0
-Siegfried;aslaksen;583;559;543;16
-Koebi;banane;818;825;809;0
+Siegfried;aslaksen;586;560;543;16
+Koebi;banane;829;848;818;3
 thefrog;thecock;0;0;0;0

@@ -30,7 +30,7 @@ public class DeckChooseController {
 	/**
 	 * Der Index des ausgewählten Decks.
 	 */
-	private int auswahl;
+	private String auswahl;
 
 	/**
 	 * Konstruktor.
@@ -62,7 +62,7 @@ public class DeckChooseController {
 		final JButton buttons[] = view.getButtons();
 
 		for (int i = 0; i < buttons.length; i++) {
-			final int j = i;
+			final String j = (String)SpielerListe.KLASSEN.keySet().toArray()[i];
 			buttons[i].addActionListener(new ActionListener() {
 
 				@Override
@@ -77,10 +77,10 @@ public class DeckChooseController {
 		view.getDialog().addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(final WindowEvent e) {
-				auswahl = new Random().nextInt(SpielerListe.KLASSEN.size());
+				auswahl = (String)SpielerListe.KLASSEN.values().toArray()[new Random().nextInt(SpielerListe.KLASSEN.size())];
 				Klasse klasse = SpielerListe.getKlasse(auswahl);
 				while (klasse.getRequiredExp() > MainWindowController.currentExp.get(SpielerListe.getPfadByKlassenName(klasse.getName()))) {
-					auswahl = new Random().nextInt(SpielerListe.KLASSEN.size());
+					auswahl = (String)SpielerListe.KLASSEN.values().toArray()[new Random().nextInt(SpielerListe.KLASSEN.size())];
 					klasse = SpielerListe.getKlasse(auswahl);
 				}
 				super.windowClosing(e);
@@ -93,7 +93,7 @@ public class DeckChooseController {
 	 *
 	 * @return Index des ausgewählten Decks.
 	 */
-	public int show() {
+	public String show() {
 		try {
 			SwingUtilities.invokeAndWait(new Runnable() {
 				@Override

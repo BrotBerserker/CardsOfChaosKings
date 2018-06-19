@@ -146,5 +146,7 @@ public class Klasse {
 	public String getAnimationFolder() {
 		return animationFolder;
 	}
+	
+	
 
 }

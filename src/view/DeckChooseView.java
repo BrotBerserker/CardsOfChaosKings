@@ -36,7 +36,8 @@ public class DeckChooseView {
 		buttons = new JButton[SpielerListe.KLASSEN.size()];
 		cons.insets = new Insets(5, 5, 5, 5);
 		int i = 0;
-		for (final Klasse klasse : SpielerListe.KLASSEN.values()) {
+		for (int j=0;j<  SpielerListe.KLASSEN.values().toArray().length;j++) {
+			final Klasse klasse=(Klasse)SpielerListe.KLASSEN.values().toArray()[j];
 			cons.gridx = i;
 			cons.gridy = 0;
 			buttons[i] = new JButton();

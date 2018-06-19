@@ -110,9 +110,9 @@ public class SpielerListe { // TODO Anderer Name, z.B. Klassenliste
 		// -----------------------------------------------------------------------------------------------------
 		// TODO: Mehr Klassen und Pfade! Siehe Piratenpad: https://piratenpad.de/p/Klassen,_Pfade,_Karten
 		// -----------------------------------------------------------------------------------------------------
-		// final Klasse chaosKing = createChaosKing();
-		// KLASSEN.put("Chaos King", chaosKing);
-		// PFADE.add(new Pfad(Pfade.JAEGERPFAD.getText(), jaeger, chaosKing));
+		 final Klasse chaosKing = createChaosKing();
+		 KLASSEN.put("Chaos King", chaosKing);
+		 PFADE.add(new Pfad(Pfade.JAEGERPFAD.getText(), jaeger, chaosKing));
 	}
 
 	private Klasse createZombie() {
@@ -142,7 +142,7 @@ public class SpielerListe { // TODO Anderer Name, z.B. Klassenliste
 		chaosKarten.add(new Einsicht());
 		chaosKarten.add(new Blendung());
 		chaosKarten.add(new SSJBoostKarte("SSJ Boost", 1, 100, "barbar/ssjkarte.jpg"));
-		final Klasse chaosKing = new Klasse("Chaos King", 25, 100, chaosKarten, "ritter", 1000);
+		final Klasse chaosKing = new Klasse("Chaos King", 25, 100, chaosKarten, "ritter", 10);
 		return chaosKing;
 	}
 
@@ -238,7 +238,7 @@ public class SpielerListe { // TODO Anderer Name, z.B. Klassenliste
 		beschwoererKarten.add(new RegElementarKarte("Wasserelementar", 10, "wasserelementar.jpg", 1, 10));
 		beschwoererKarten.add(new StatsElementarKarte("Sturmelementar", 10, "sturmelementar.jpg", -2, StatsEffekt.NO_EFFECT, 3, false));
 		beschwoererKarten.add(new StatsElementarKarte("Eiselementar", 10, "eiselementar.jpg", StatsEffekt.NO_EFFECT, 2, 3, true));
-		beschwoererKarten.add(new ElementarZerstoererKarte("Elementzerstörung", 10, "apokalypse.jpg", -5));
+		beschwoererKarten.add(new ElementarZerstoererKarte("Elementzerstörung", 10, "apokalypse.jpg", -6));
 		beschwoererKarten.add(new ElementarZerstoererKarte("Elementabsorbtion", 10, "blendung.jpg", 5));
 		final Klasse beschwoerer = new Klasse("Beschwörer", 100, 100, beschwoererKarten, "beschwoerer", 25);
 		return beschwoerer;
@@ -265,27 +265,28 @@ public class SpielerListe { // TODO Anderer Name, z.B. Klassenliste
 	}
 
 	/**
-	 * Gibt die {@link Klasse} an einem bestimmten Index zurück.
+	 * Gibt die {@link Klasse} mit bestimmtem Namenzurück.
 	 *
-	 * @param index
-	 *            Der Index
+	 * @param key
+	 *            Name und Schlüssel der Klasse
 	 * @return Klasse
 	 */
 	// TODO KLASSEN war vorher eine Liste, deshalb der Zugriff über Index. Jetzt ist das unschön.
-	public static Klasse getKlasse(final int index) {
-		return (Klasse) KLASSEN.values().toArray()[index];
+	public static Klasse getKlasse(final String key) {
+		return KLASSEN.get(key);
+		//		return (Klasse) KLASSEN.values().toArray()[index];
 	}
 
 	/**
-	 * Erstellt einen neuen {@link Spieler} mit der Klasse am gegebenen Index.
+	 * Erstellt einen neuen {@link Spieler} mit einer Klasse bei gegebenem Namen.
 	 *
-	 * @param index
-	 *            Der Index
+	 * @param Key
+	 *      	Name und Schlüssel der Klasse
 	 * @return Spieler
 	 */
-	public static Spieler getSpieler(final int index) {
+	public static Spieler getSpieler(final String key) {
 		// final Spieler s = new Spieler(KLASSEN.get(index));
-		final Spieler s = new Spieler((Klasse) KLASSEN.values().toArray()[index]);
+		final Spieler s = new Spieler(KLASSEN.get(key));
 		return s;
 	}
 
