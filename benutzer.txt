@@ -1,6 +1,6 @@
 Horst;banane;1490;393;205;123
 Jana;janaop;0;3;0;0
 Siegfried;aslaksen;592;572;564;16
-Koebi;banane;829;848;818;3
+Koebi;banane;832;856;822;3
 thefrog;thecock;0;0;0;0
-Slash;kekse;666;666;666;666
+Slash;kekse;667;667;666;668

@@ -566,7 +566,7 @@ public class MainWindowController {
 			view.getPlayerCardsPanel().getCardButtons()[i].addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(final ActionEvent e) {
-					karteInDieMitte(x);
+					karteInDieMitte(x,spieler.isIstGeblendet());
 				}
 			});
 			
@@ -574,7 +574,7 @@ public class MainWindowController {
 				@Override
 	            public void mouseReleased(MouseEvent event){
 	                if(event.getClickCount() == 2 && event.getButton() == MouseEvent.BUTTON1){
-	                	karteInDieMitte(x);
+	                	karteInDieMitte(x, spieler.isIstGeblendet());
 	                	spieleKarte();
 	                }
 	            }
@@ -589,11 +589,15 @@ public class MainWindowController {
 	 * @param index
 	 *            Index der Karte, deren Bild in die Mitte soll.
 	 */
-	private void karteInDieMitte(final int index) {
+	private void karteInDieMitte(final int index, final boolean blind) {
 		indexInDerMitte = index;
 		// ButtonImages.addImageToButton(view.getMiddlePanel().getKarteImageButton(),
 		// view.getPlayerCardsPanel().getCardButtons()[index].getIcon());
+		if(!blind){
 		ButtonImages.addKarteToButton(view.getMiddlePanel().getKarteImageButton(), spieler.getHand()[index]);
+		}else{
+			ButtonImages.addImageToButton(view.getMiddlePanel().getKarteImageButton(),"hinten.jpg");
+		}
 		playButton.setEnabled(true);
 	}
 
@@ -620,6 +624,10 @@ public class MainWindowController {
 		playButton.setEnabled(false);
 		// ButtonImages.addImageToButton(view.getMiddlePanel().getKarteImageButton(), "hinten.jpg");
 		// view.getPlayerCardsPanel().getCardButtons()[indexInDerMitte].setIcon(null);
+		
+		//Damit nach einem Blind die ausgespielte Karte gesehen werden kann wird sie nach dem ausspielen angezeigt
+		ButtonImages.addKarteToButton(view.getMiddlePanel().getKarteImageButton(), spieler.getHand()[indexInDerMitte]);
+		//Gespielte Karte wird durch eine Kartenrückseite ersetzt
 		ButtonImages.addImageToButton(view.getPlayerCardsPanel().getCardButtons()[indexInDerMitte], "hinten.jpg");
 	}
 
